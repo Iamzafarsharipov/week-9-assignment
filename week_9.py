@@ -1,21 +1,26 @@
 
-def filter_alerts(alerts, min_severity):
-    final_alerts = []
-
-    if min_severity == "ADVISORY":
-        min_level = 1
-    elif min_severity == "WATCH":
-        min_level = 2
-    elif min_severity == "WARNING":
-        min_level = 3
-    else:
-        return final_alerts
-    for alert in alerts:
-        if alert==" ":
+#Variant A
+def format_roster(names):
+    cleaned_list=[]
+    for name in names:
+        cleaned = name.strip()
+        if cleaned=="":
             continue
-    if not alert==" ":
-        alert=alerts.split("]")
-#I don't know
+        cleaned=cleaned.upper()
+        cleaned_list.append(cleaned)
+
+    return cleaned_list
+student_list = [
+    "  john doe ",
+    "JANE SMITH",
+    "   ",
+    "alice wonderland",
+    "bOb rOsS  "
+]
+
+print(format_roster(student_list))
+            
+
 
 
 
